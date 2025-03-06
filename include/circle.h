@@ -6,16 +6,16 @@
 const double PI = 3.1415926535;
 
 class Circle {
-private: 
+ private:
   double radius;
   double ference;
   double area;
 
   void updateFerence();
   void updateArea();
-  void ValidateRadius(double);
+  void validateRadius(double);
 
-public: 
+ public:
   explicit Circle(double radius);
 
   void setRadius(double radius);

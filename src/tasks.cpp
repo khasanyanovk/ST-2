@@ -1,3 +1,4 @@
+// Copyright 2022 UNN-CS
 #include "../include/tasks.h"
 #include "../include/circle.h"
 
