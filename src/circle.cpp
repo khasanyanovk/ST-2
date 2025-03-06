@@ -1,8 +1,6 @@
 // Copyright 2022 UNN-CS
 #include "../include/circle.h"
 #include <cmath>
-
-#include <cmath>
 #include <stdexcept>
 
 void Circle::updateFerence() { ference = 2 * PI * radius; }
