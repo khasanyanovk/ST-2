@@ -1,7 +1,9 @@
-#ifndef TASKS_H
-#define TASKS_H
+// Copyright 2022 UNN-CS
+
+#ifndef INCLUDE_TASKS_H
+#define INCLUDE_TASKS_H
 
 double calculateGap();
 double calculatePoolCost();
 
-#endif // TASKS_H
+#endif // INCLUDE_TASKS_H
