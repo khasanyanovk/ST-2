@@ -1,22 +1,21 @@
 // Copyright 2022 UNN-CS
 
-#ifndef INCLUDE_CIRCLE_H
-#define INCLUDE_CIRCLE_H
+#ifndef INCLUDE_CIRCLE_H_
+#define INCLUDE_CIRCLE_H_
 
 const double PI = 3.1415926535;
 
 class Circle {
-private:
-
+private: 
   double radius;
   double ference;
   double area;
 
   void updateFerence();
   void updateArea();
+  void ValidateRadius(double);
 
-public:
-
+public: 
   explicit Circle(double radius);
 
   void setRadius(double radius);
