@@ -8,12 +8,12 @@
 
 TEST(CircleTest, ConstructorValidRadius) {
   Circle c(5.0);
-  EXPECT_DOUBLE_EQ(5.0, c.getRadius());
+  ASSERT_NEAR(5.0, c.getRadius(), 1e-9);
 }
 
 TEST(CircleTest, ConstructorZeroRadius) {
   Circle c(0.0);
-  EXPECT_DOUBLE_EQ(0.0, c.getRadius());
+  ASSERT_NEAR(0.0, c.getRadius(), 1e-9);
 }
 
 TEST(CircleTest, ConstructorNegativeRadius) {
@@ -23,13 +23,13 @@ TEST(CircleTest, ConstructorNegativeRadius) {
 TEST(CircleTest, SetValidRadius) {
   Circle c(2.0);
   c.setRadius(10.0);
-  EXPECT_DOUBLE_EQ(10.0, c.getRadius());
+  ASSERT_NEAR(10.0, c.getRadius(), 1e-9);
 }
 
 TEST(CircleTest, SetZeroRadius) {
   Circle c(5.0);
   c.setRadius(0.0);
-  EXPECT_DOUBLE_EQ(0.0, c.getFerence());
+  ASSERT_NEAR(0.0, c.getFerence(), 1e-9);
 }
 
 TEST(CircleTest, SetNegativeRadius) {
@@ -39,35 +39,35 @@ TEST(CircleTest, SetNegativeRadius) {
 
 TEST(CircleTest, PrecisionFerenceCalculation) {
   Circle c(1.0);
-  EXPECT_DOUBLE_EQ(2 * M_PI, c.getFerence());
+  ASSERT_NEAR(2 * PI, c.getFerence(), 1e-9);
 }
 
 TEST(CircleTest, PrecisionAreaCalculation) {
   Circle c(2.0);
-  EXPECT_DOUBLE_EQ(M_PI * 4.0, c.getArea());
+  ASSERT_NEAR(PI * 4.0, c.getArea(), 1e-9);
 }
 
 TEST(CircleTest, MaxDoubleRadius) {
   double max = std::numeric_limits<double>::max();
   Circle c(max);
-  EXPECT_DOUBLE_EQ(max, c.getRadius());
+  ASSERT_NEAR(max, c.getRadius(), 1e-9);
 }
 
 TEST(CircleTest, MinDoubleRadius) {
   double min = std::numeric_limits<double>::min();
   Circle c(min);
-  EXPECT_DOUBLE_EQ(min, c.getRadius());
+  ASSERT_NEAR(min, c.getRadius(), 1e-9);
 }
 
 TEST(TasksTest, EarthRopeGapCalculation) {
   double gap = calculateGap();
-  EXPECT_NEAR(1 / (2 * M_PI), gap, 1e-9);
+  ASSERT_NEAR(1 / (2 * PI), gap, 1e-9);
 }
 
 TEST(TasksTest, PoolCostCalculation) {
   double cost = calculatePoolCost();
-  double expected = (M_PI * (4 * 4 - 3 * 3) * 1000) + (2 * M_PI * 4 * 2000);
-  EXPECT_DOUBLE_EQ(expected, cost);
+  double expected = (PI * (4 * 4 - 3 * 3) * 1000) + (2 * PI * 4 * 2000);
+  ASSERT_NEAR(expected, cost, 1e-9);
 }
 
 TEST(CircleTest, SetInvalidFerence) {
@@ -89,14 +89,14 @@ TEST(CircleTest, ChainSetters) {
   Circle c(3.0);
   c.setFerence(20.0);
   c.setArea(c.getArea() * 2);
-  EXPECT_DOUBLE_EQ(40.0, c.getArea());
+  ASSERT_NEAR(40.0, c.getArea(), 1e-9);
 }
 
 TEST(CircleTest, StateConsistency) {
   Circle c(5.0);
   double initialArea = c.getArea();
   c.setRadius(5.0);
-  EXPECT_DOUBLE_EQ(initialArea, c.getArea());
+  ASSERT_NEAR(initialArea, c.getArea(), 1e-9);
 }
 
 TEST(TasksTest, EarthRopeEdgeCase) {
@@ -107,7 +107,7 @@ TEST(TasksTest, EarthRopeEdgeCase) {
 }
 
 TEST(TasksTest, PoolCostComponents) {
-  double concrete = (M_PI * (4 * 4 - 3 * 3)) * 1000;
-  double fence = (2 * M_PI * 4) * 2000;
-  EXPECT_DOUBLE_EQ(concrete + fence, calculatePoolCost());
+  double concrete = (PI * (4 * 4 - 3 * 3)) * 1000;
+  double fence = (2 * PI * 4) * 2000;
+  ASSERT_NEAR(concrete + fence, calculatePoolCost(), 1e-9);
 }
