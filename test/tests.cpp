@@ -89,7 +89,7 @@ TEST(CircleTest, ChainSetters) {
   Circle c(3.0);
   c.setFerence(20.0);
   c.setArea(c.getArea() * 2);
-  ASSERT_NEAR(40.0, c.getArea(), 1e-9);
+  ASSERT_NEAR(63.66, c.getArea(), 1e-9);
 }
 
 TEST(CircleTest, StateConsistency) {
