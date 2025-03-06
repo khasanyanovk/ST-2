@@ -1,10 +1,10 @@
 // Copyright 2025 UNN-CS Team
 
-#include "../include/tasks.h"
-#include "../include/circle.h"
 #include <gtest/gtest.h>
 #include <cmath>
 #include <limits>
+#include "../include/tasks.h"
+#include "../include/circle.h"
 
 TEST(CircleTest, ConstructorValidRadius) {
   Circle c(5.0);
