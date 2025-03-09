@@ -20,6 +20,11 @@ TEST(CircleTest, ConstructorNegativeRadius) {
   EXPECT_THROW(Circle(-1.0), std::invalid_argument);
 }
 
+TEST(CircleTest, CanSetValidRadius) {
+  Circle c(2.0);
+  ASSERT_NO_THROW(c.setRadius(10.0));
+}
+
 TEST(CircleTest, SetValidRadius) {
   Circle c(2.0);
   c.setRadius(10.0);
